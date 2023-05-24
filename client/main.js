@@ -1,7 +1,7 @@
 import {processform,editEvent,deleteEvent} from './eventlisteners.js'
-
-export const expense_form = document.getElementById('add-expense');
-export const expense_list = document.getElementById('expense-list');
+import {getExpenses} from './network_calls.js'
+const expense_form = document.getElementById('add-expense');
+const expense_list = document.getElementById('expense-list');
 
 expense_form.addEventListener('submit',processform)
 expense_list.addEventListener('click',editEvent)
@@ -16,7 +16,7 @@ window.onload = async () =>{
 }
 function populateExpenseList(data) {
     for (const item of data){
-        const li = document.createElementById('li')
+        const li = document.createElement('li')
         li.setAttribute('data-id',item.id)
         li.innerHTML = `<b>Amount</b>:${item.amount},<b>Category</b>:${item.category},<b>Description</b>:${item.description}`
         li.appendChild(createEditButton())

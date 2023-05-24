@@ -21,7 +21,7 @@
             <h5 style="display:flex;justify-content: center;">
                 Expenditure
             </h5>
-            <ul class="list-group"id="expenditures">
+            <ul class="list-group"id="expense-list">
             </ul>
            
         </div>
@@ -31,9 +31,6 @@
             <h5 style="display:flex;justify-content: center;">
                 Add Expense
             </h5>
-            <ul class="list-group" id="expense-list">
-
-            </ul>
             <p class="msg"></p>
             <form id="add-expense">
               <input type="hidden" name="_method" value=""></input>
@@ -43,7 +40,7 @@
                       <label for="amount" class="col-form-label">Amount</label>
                     </div>
                     <div class="col-auto">
-                      <input type="Number" name="amount" id="amount"class="form-control" >
+                      <input type="Number" name="amount" id="amount"class="form-control" ></input>
                     </div>
                     
                   </div>
@@ -67,7 +64,7 @@
                       <label for="description" class="col-form-label">Description</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" name="description"id="description" class="form-control" >
+                      <input type="text" name="description"id="description" class="form-control" ></input>
                     </div>
                     
                   </div>
@@ -79,6 +76,6 @@
         </div>
     </div>
 </body>
-
-    <script type="module" src="main.mjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="main.js"></script>
 </html>
