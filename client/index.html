@@ -46,12 +46,17 @@
         if (!username|| !email || !password) alert("Submit all fields!!!")
         else{
             try{
-                const resp = await axios.post('http://127.0.0.1:3000/users/signup')
+                const resp = await axios.post('http://127.0.0.1:3000/users/signup',{username:username,
+                email:email,
+                password:password
+            })
                 if (resp.status<300){
-                    console.log('done')
+                    signupform.reset()
+                    // console.log('done')
                 }
             }catch(err){
-                console.log(err.message)
+                if (err.response.status==409)alert("User Already Exists!!!")
+                else alert(err.message)
             }
         }
     })
