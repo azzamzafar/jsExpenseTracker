@@ -1,6 +1,6 @@
 const ExpenseModel = require('../models/expenses.js');
 const sequelize = require('../utils/db_con.js');
-const {serverlogger} = require('../utils/logger.js');
+// const {serverlogger} = require('../utils/logger.js');
 
 exports.postAddExpense = async (req,res,next) =>{
     const amount = req.body.amount;
@@ -17,7 +17,7 @@ exports.postAddExpense = async (req,res,next) =>{
         })
         res.status(201).send("created")
     }catch(err){
-        serverlogger.error(err)
+        // serverlogger.error(err)
         res.status(500).send("Unsuccessful!")
     }
 }
@@ -36,7 +36,7 @@ exports.putUpdateExpense = async (req,res,next) => {
         })
         res.status(204).send("Updated")
     }catch(err){
-        serverlogger.error(err)
+        // serverlogger.error(err)
         res.status(500).send("Internal Server Error")
     }
 }
@@ -59,7 +59,7 @@ exports.getSingleExpense = async (req,res,next) => {
         })
         res.json(result)
     }catch(err){
-        serverlogger.error(err)
+        //serverlogger.error(err)
         res.status(500).send("Internal Server Error")
     }
 }
@@ -73,7 +73,7 @@ exports.deleteExpense = async (req,res,next)=>{
         })
         res.status(201).send("Deleted")
     }catch(err){
-        serverlogger.error(err)
+        // serverlogger.error(err)
         res.status(500).send("Internal Server Error")
     }
 }
