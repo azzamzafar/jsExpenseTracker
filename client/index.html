@@ -29,7 +29,7 @@
               <label class="form-check-label" for="signincheck">Keep me signed in.</label>
             </div>
             <div class="mb-3 ">
-                <a style="background-color:lightblue;"href="#"> Already a user? Login </a>
+                <a style="background-color:lightblue;"href="./login.html"> Already a user? Login </a>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -40,9 +40,9 @@
     const signupform = document.getElementById('signupform')
     signupform.addEventListener('submit',async (e) =>{
         e.preventDefault()
-        const username = signupform.querySelector('input').value;
-        const email = signupform.querySelector('input').value;
-        const password = signupform.querySelector('input').value;
+        const username = signupform.querySelector('input[id="username"]').value;
+        const email = signupform.querySelector('input[id="email"]').value;
+        const password = signupform.querySelector('input[id="password"]').value;
         if (!username|| !email || !password) alert("Submit all fields!!!")
         else{
             try{

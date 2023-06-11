@@ -13,6 +13,6 @@ app.use(bodyParser.json({extended:false}))
 app.use('/users',authRoutes)
 app.use('/expenses',expenseRoutes)
 
-sequelize.sync().then(()=>{
+sequelize.sync({}).then(()=>{
     app.listen(PORT)
 }).catch(err=>console.log(err))
